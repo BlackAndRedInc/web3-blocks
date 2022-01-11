@@ -3,4 +3,5 @@ export default interface IConnectionSpec {
   envKeyPath?: string;
   envKeyID?: string;
   envKeyKey?: string;
+  rpc?: string;
 }
