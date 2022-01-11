@@ -64,6 +64,10 @@ export const providerFor = (chain: Chain, spec: IConnectionSpec): Web3 => {
   switch (spec.type) {
     case 'IPC':
       return IPCProvider(String(process.env[String(spec.envKeyPath)]));
+    case 'WS':
+      return WSProvider(String(spec.rpc));
+    case 'HTTP':
+      return HTTPProvider(String(spec.rpc));
     case 'WS_Infura':
       return WSProvider(`wss://${chain}.infura.io/ws/v3/${process.env[String(spec.envKeyID)]}`);
     case 'WS_Alchemy':
