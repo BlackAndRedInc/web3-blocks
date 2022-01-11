@@ -58,8 +58,8 @@ export default class Wallet {
       return;
     }
 
-    const chainID = await this.provider.eth.getChainId();
-    switch (chainID) {
+    const chainId = await this.provider.eth.getChainId();
+    switch (chainId) {
       case 1337: // ganache
       case 1:
         this.opts = {
@@ -72,7 +72,9 @@ export default class Wallet {
         };
         break;
       default:
-        throw new Error(`Chain ID ${chainID} unknown`);
+        this.opts = {
+          common: Common.custom({ chainId })
+        }
     }
   }
 
