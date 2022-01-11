@@ -9,6 +9,8 @@ import ITx from './types/ITx';
 import IProviderGroup from './types/IProviderGroup';
 import ProviderGroup from './ProviderGroup';
 
+console.log(Common)
+
 interface ITxHex {
   nonce: string;
   gasPrice: string;
